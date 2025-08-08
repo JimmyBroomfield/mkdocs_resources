@@ -1,0 +1,105 @@
+site_name: Gamm-Py
+site_description: Gamm-Py is a Python package for Generalized Additive Mixed Models (GAMM).
+site_author: James Broomfield
+site_url: https://your-project-url.com
+repo_url: https://github.com/JimmyBroomfield/gamm-py
+repo_name: gamm-py
+
+copyright: Copyright &copy; 2025 James Broomfield
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      primary: deep-purple
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep-purple
+      accent: lime
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.instant
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - css/mkdocstrings.css
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      linenums_style: table
+      pygments_lang_class: true
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+
+plugins:
+- search:
+    separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+- mkdocstrings:
+    handlers:
+      python:
+        options:
+            docstring_section_style: table # or "table"
+            filters: ["!^_"]
+            heading_level: 1
+            merge_init_into_class: true
+            parameter_headings: false
+            separate_signature: true
+            show_root_heading: true
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            summary: true
+- api-autonav:
+    modules: ['gammpy']
+    nav_item_prefix: ""
+- git-revision-date-localized:
+    enable_creation_date: true
+    type: timeago
+
+# Page tree
+nav:
+  - Home: index.md
+  - Guide:
+      - Getting Started: guide/getting-started.md
+      - Usage: guide/usage.md
